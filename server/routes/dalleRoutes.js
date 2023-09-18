@@ -4,10 +4,12 @@ import OpenAI from "openai";
 
 dotenv.config();
 
+const apiK = process.env.OPENAI_API_KEY;
+
 const router = express.Router();
 
 const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
+  apiKey: apiK,
 });
 
 router.route("/").get((req, res) => {
